@@ -50,14 +50,15 @@ EfficientNet models are designed to achieve high accuracy while maintaining effi
 <p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/before_fix_overfit.jpg?raw=true" width=500></p>
 <h4 align="center">Figure 5. The big gap between train_accuracy and val_accuracy</h4>
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/after_fix_overfit.jpg?raw=true" width=500></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/after_fix_overfit.jpg?raw=true" width=400></p>
 <h4 align="center">Figure 6. The gap between train_accuracy and val_accuracy becomes smaller</h4>
 
 **Learning rate divergency** : According to the figure below, from epoch 5, the trainning loss and validation loss value become diverse significantly. At the beginning, I tried learning rate at 0.001, the situation did not improve. Therefore, I adjusted it to 0.0001 and applied L2 regularization layer to address the issue. Then, the model has been improved considerably. 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/learning_rate.jpg?raw=true" width=500></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/learning_rate.jpg?raw=true" width=400></p>
 <h4 align="center">Figure 7 . Learning rate divergency problem with the deep learning model</h4>
 
 ### 5. Discussion
+
 The deep learning model I have build perform well with image classification task for coarse-grained data which has 8 classes when model reach 80% accuracy.
 
 The performance comparison between the final conventional ML and deep learning models reveals that the deep learning model outperformed the conventional ML model by a significant margin. The deep learning model achieved an accuracy of 83% on the public test set, surpassing the conventional ML model by 36%. This indicates that the deep learning model was able to capture more complex patterns and representations in the data, leading to improved classification accuracy.
