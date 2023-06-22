@@ -5,7 +5,7 @@ In recent years, image classification has become an increasingly important task 
 
 In this project, I will be working with a dataset of living things, which includes images of animals and plants. The dataset contains a set of coarse-grained labels, consisting of 8 different categories.
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/example.png?raw=true" width=600></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/example.png?raw=true" width=600></p>
 
 ### 2. Data Preprocessing
 -**Bad proportion of data** : Dataset contains **102,465** and **96,383** images for train and validataion data respectively. Thus, I decided to move all images from validation folder into train folder and merge the val.csv to train.csv. After that, I use ImageDataGenerator of tensorflow library to reallocate the data 80% for train set and 20% for validataion set.
@@ -14,23 +14,23 @@ In this project, I will be working with a dataset of living things, which includ
 
 **Before resampling**
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/distribution1.png?raw=true" width=400></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/distribution1.png?raw=true" width=400></p>
 <h4 align="center">Figure 1. The distribution of dataset before resampling</h4>
 
 **After resampling**
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/distribution2.png?raw=true" width=400></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/distribution2.png?raw=true" width=400></p>
 <h4 align="center">Figure 2. The distribution of dataset after resampling</h4>
 
 -**Label Encoding** :  The labels in csv files give the information of image. They are in form of numerical variable which is from 0 to 7. There are several drawbacks when using this scale of labels such as creating bias in the model or ordinality assumptions. Therefore, labels are encoded into the vector of 0 and 1 (onehot encoding). When ImageDataGenerator is used to load data, it will automatically encode the labels.
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/label_encoding.png?raw=true" width=400></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/label_encoding.png?raw=true" width=400></p>
 <h4 align="center">Figure 3. Label Encoding</h4>
 
 ### 3. Conventional ML Model
 The task is **image classification** for color images, so this is **supervised, categorical (classifcation), batch problem**. Therefore, the machine learning classifiers which can be use in this case are Logistic Regression, Decision Trees, Random Forest, Support Vector Machines (SVM) , K-Nearest Neighbors (KNN). In this project, I decide to use **Support Vector Machines (SVM)** and **Random Forest** for the task. 
 The final model that produced the best-performing predictions for the Kaggle submission (accuracy 48%) was an **Random Forest** with `max_depth` = 60, `n_estimators` = 1000.
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/Convolutional_ML.jpg?raw=true" width=600></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/Convolutional_ML.jpg?raw=true" width=600></p>
 <h4 align="center">Figure 4. The performance of conventional models</h4>
 
 ### 4. Deep Learning Model
@@ -47,14 +47,14 @@ EfficientNet models are designed to achieve high accuracy while maintaining effi
 #### Problems when trainning the model : 
 **Overfitting** : When I first tried MobileNetV2 model, after creating and freezing base model, the architecture of model was only base model layer and output layer for prediction. The result was that there is a big gap between trainning and validation accuracy. The trainning accuracy continously increased until 80% , but the val_acc reach the peak at 52% at 3rd epoch. To handle this issue, Dropout layer with dropout rate at 0.2 and L2  kernel_regularizer are added to model to reduce the overfitting problem. 
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/before_fix_overfit.jpg?raw=true" width=500></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/before_fix_overfit.jpg?raw=true" width=500></p>
 <h4 align="center">Figure 5. The big gap between train_accuracy and val_accuracy</h4>
 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/after_fix_overfit.jpg?raw=true" width=400></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/after_fix_overfit.jpg?raw=true" width=400></p>
 <h4 align="center">Figure 6. The gap between train_accuracy and val_accuracy becomes smaller</h4>
 
 **Learning rate divergency** : According to the figure below, from epoch 5, the trainning loss and validation loss value become diverse significantly. At the beginning, I tried learning rate at 0.001, the situation did not improve. Therefore, I adjusted it to 0.0001 and applied L2 regularization layer to address the issue. Then, the model has been improved considerably. 
-<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/learning_rate.jpg?raw=true" width=400></p>
+<p align="center"><img style="align: center;" src="https://github.com/vinhphuphan/ImageClassification/blob/main/images/learning_rate.jpg?raw=true" width=400></p>
 <h4 align="center">Figure 7 . Learning rate divergency problem with the deep learning model</h4>
 
 ### 5. Discussion
