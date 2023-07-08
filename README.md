@@ -1,4 +1,4 @@
-# [Python]Living Species Image Classification
+<h1 align="center"> </a> Living Species Image Classification using Python <a href="https://github.com/mrankitgupta/PythonLessons" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="55" height="40"/> </a> </h1>
 
 ### 1. Introduction
 In recent years, image classification has become an increasingly important task in the field of computer vision. The ability to automatically classify images has a wide range of applications, from recognizing objects in photographs to identifying medical conditions in diagnostic images.
