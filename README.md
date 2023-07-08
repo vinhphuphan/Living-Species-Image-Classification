@@ -1,4 +1,4 @@
-<h1 align="center"> </a> Living Species Image Classification using Python <a href="https://github.com/mrankitgupta/PythonLessons" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="55" height="40"/> </a> </h1>
+<h1 align="center"> </a> Living Species Image Classification using Python<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="55" height="40"/> </a> </h1>
 
 ### 1. Introduction
 In recent years, image classification has become an increasingly important task in the field of computer vision. The ability to automatically classify images has a wide range of applications, from recognizing objects in photographs to identifying medical conditions in diagnostic images.
@@ -68,4 +68,11 @@ When inspecting the data, it is crucial to analyze the characteristics and quali
 In terms of resource requirements, deep learning models often demand more computational resources compared to conventional ML models. Deep learning models typically require powerful GPUs and longer training times due to their complex architectures and the need to process large amounts of data.
 
 Overall, the implementation of deep learning models for image classification tasks provides promising results, showcasing the capability of neural networks to learn intricate patterns and achieve high accuracy. However, addressing overfitting and ensuring model generalization are important considerations for future improvements. Additionally, optimizing computational resources and adapting models to specific dataset characteristics can further enhance the performance and efficiency of the models.
+
+### Related Projects:question: 👨‍💻 🛰️
+<code>[Olympic-Weightlifting-Data-Analysis](https://github.com/vinhphuphan/Olympic-Weightlifting-Data-Analysis)</code> 📊
+
+<code>[Titanic - Machine Learning from Disaster using Python](https://github.com/vinhphuphan/Titanic-Machine-Learning-from-Disaster)</code> 📊
+
+<code>[Text Classification With Movie Reviews](https://github.com/vinhphuphan/Text-Classification-With-Movie-Reviews/)</code> 📊
 
